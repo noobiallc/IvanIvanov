@@ -122,6 +122,42 @@ if (consultForm) {
   });
 }
 
+/* ---- Stat counter animation ---- */
+(function() {
+  var statEls = document.querySelectorAll('.stat-number[data-count]');
+  if (!statEls.length) return;
+
+  function animateStat(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var suffix = el.getAttribute('data-suffix') || '';
+    var duration = 1600;
+    var start = null;
+
+    function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      var progress = Math.min((timestamp - start) / duration, 1);
+      var value = Math.round(easeOut(progress) * target);
+      el.textContent = (target >= 1000 ? value.toLocaleString() : value) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        animateStat(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  statEls.forEach(function(el) { observer.observe(el); });
+})();
+
 /* ---- Scroll reveal ---- */
 (function() {
   const revealEls = document.querySelectorAll('.reveal');

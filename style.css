@@ -341,7 +341,7 @@ button { font-family: inherit; }
    HERO — HOMEPAGE
    ============================================================ */
 .hero {
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   background: var(--navy);
@@ -374,13 +374,13 @@ button { font-family: inherit; }
   z-index: 2;
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 120px 24px 80px;
+  padding: 60px 24px;
   width: 100%;
 }
 .hero__label {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
@@ -390,7 +390,7 @@ button { font-family: inherit; }
 .hero__headline {
   font-family: 'Playfair Display', serif;
   font-weight: 900;
-  font-size: clamp(44px, 7vw, 80px);
+  font-size: clamp(28px, 3.5vw, 46px);
   color: var(--white);
   line-height: 1.06;
   margin-bottom: 26px;
@@ -399,7 +399,7 @@ button { font-family: inherit; }
 .hero__sub {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 15px;
   color: rgba(255,255,255,.8);
   max-width: 580px;
   line-height: 1.7;
@@ -412,6 +412,7 @@ button { font-family: inherit; }
   flex-wrap: wrap;
   margin-bottom: 52px;
 }
+.hero__ctas .btn { font-size: 13px; padding: 11px 24px; }
 .hero__trust {
   display: flex;
   align-items: center;
@@ -419,7 +420,7 @@ button { font-family: inherit; }
 }
 .hero__trust-item {
   font-family: 'Inter', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   color: rgba(255,255,255,.65);
   padding: 0 20px;
   position: relative;
@@ -438,12 +439,52 @@ button { font-family: inherit; }
 }
 
 /* ============================================================
+   STATS SECTION
+   ============================================================ */
+.stats-section {
+  background: var(--white);
+  padding: 72px 0;
+}
+.stats-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stat-block {
+  flex: 1;
+  text-align: center;
+  padding: 24px 32px;
+}
+.stat-divider-v {
+  width: 1px;
+  height: 72px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(48px, 5.5vw, 72px);
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+}
+
+/* ============================================================
    PAGE HERO — inner pages
    ============================================================ */
 .page-hero {
   background: var(--navy);
   padding: 80px 0;
-  text-align: center;
+  text-align: left;
   position: relative;
   overflow: hidden;
 }
@@ -458,8 +499,8 @@ button { font-family: inherit; }
 .page-hero__label {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 11px;
-  letter-spacing: 0.15em;
+  font-size: 10px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
   display: block;
@@ -468,7 +509,7 @@ button { font-family: inherit; }
 .page-hero__headline {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: clamp(32px, 5vw, 56px);
+  font-size: clamp(28px, 3.5vw, 46px);
   color: var(--white);
   line-height: 1.1;
   margin-bottom: 16px;
@@ -476,10 +517,9 @@ button { font-family: inherit; }
 .page-hero__sub {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
-  font-size: 17px;
+  font-size: 15px;
   color: rgba(255,255,255,.72);
   max-width: 600px;
-  margin: 0 auto;
   line-height: 1.65;
 }
 .page-hero__note {
@@ -588,10 +628,10 @@ button { font-family: inherit; }
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 14px;
-  color: var(--gold);
+  color: var(--gold-dark);
   transition: color .2s ease;
 }
-.service-cards-cta a:hover { color: var(--gold-light); }
+.service-cards-cta a:hover { color: var(--gold); }
 
 /* ============================================================
    FEATURED PROJECTS GRID (homepage + projects page)
@@ -1328,6 +1368,11 @@ textarea.form-control { resize: vertical; min-height: 100px; }
    RESPONSIVE — MOBILE (<768px)
    ============================================================ */
 @media (max-width: 767px) {
+  .stats-section { padding: 56px 0; }
+  .stats-row { flex-direction: column; gap: 0; }
+  .stat-block { padding: 28px 24px; width: 100%; }
+  .stat-divider-v { width: 80px; height: 1px; }
+  .stat-number { font-size: clamp(44px, 12vw, 64px); }
   .section { padding: 64px 0; }
   .announce-bar { padding: 7px 0; }
   .announce-bar__inner { font-size: 11px; }
@@ -1335,7 +1380,7 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .nav__links, .nav__cta, .nav__phone { display: none; }
   .nav__hamburger { display: flex; }
 
-  .hero__inner { padding: 100px 24px 72px; }
+  .hero__inner { padding: 60px 24px; }
   .hero__trust { flex-direction: column; align-items: flex-start; gap: 8px; }
   .hero__trust-item { padding: 0; }
   .hero__trust-item::after { display: none !important; }
