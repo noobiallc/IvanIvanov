@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renovation Materials &amp; Products — BHDR INC.</title>
+  <meta name="description" content="BHDR INC. supplies a full range of hotel renovation materials — flooring, tiles, bathroom fixtures, furniture, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Announcement Bar -->
+<div class="announce-bar">
+  <div class="container">
+    <div class="announce-bar__inner">
+      Serving Hotels &amp; Motels Across the Southeast United States &mdash; Renovation &amp; Materials Supply
+    </div>
+  </div>
+</div>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="BHDR INC." class="logo-img">
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="projects.html" class="nav__link">Projects</a></li>
+        <li><a href="services.html" class="nav__link">Services</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Products
+            <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="mega-menu" role="menu">
+            <div class="mega-menu__inner">
+              <div>
+                <p class="mega-menu__col-title">Flooring</p>
+                <a href="products.html" class="mega-menu__link">Vinyl Flooring</a>
+                <a href="products.html" class="mega-menu__link">Floor Tiles</a>
+                <a href="products.html" class="mega-menu__link">Carpet &amp; Soft Goods</a>
+              </div>
+              <div>
+                <p class="mega-menu__col-title">Bathroom</p>
+                <a href="products.html" class="mega-menu__link">Surrounds &amp; Shower Pans</a>
+                <a href="products.html" class="mega-menu__link">Shower Glass Doors</a>
+                <a href="products.html" class="mega-menu__link">Plumbing Fixtures</a>
+                <a href="products.html" class="mega-menu__link">Bathroom Accessories</a>
+              </div>
+              <div>
+                <p class="mega-menu__col-title">Interior</p>
+                <a href="products.html" class="mega-menu__link">Vanity &amp; Kitchen Cabinets</a>
+                <a href="products.html" class="mega-menu__link">Quartz Countertops</a>
+                <a href="products.html" class="mega-menu__link">Mirrors &amp; Artwork</a>
+                <a href="products.html" class="mega-menu__link">Lamps &amp; Lighting</a>
+              </div>
+              <div>
+                <p class="mega-menu__col-title">Structure &amp; Finish</p>
+                <a href="products.html" class="mega-menu__link">Windows</a>
+                <a href="products.html" class="mega-menu__link">Doors</a>
+                <a href="products.html" class="mega-menu__link">Window Treatments</a>
+                <a href="products.html" class="mega-menu__link">Furniture</a>
+              </div>
+              <div class="mega-menu__cta-panel">
+                <p class="mega-menu__cta-body">Need specific materials for your project? Contact us and we'll source exactly what you need.</p>
+                <a href="contact.html" class="mega-menu__cta-btn">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+      <a href="tel:0000000000" class="nav__phone">(000) 000-0000</a>
+      <a href="contact.html" class="nav__cta">Request a Consultation</a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobile-nav">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="projects.html" class="nav__link">Projects</a>
+      <a href="services.html" class="nav__link">Services</a>
+      <button class="nav__mobile-toggle" id="mobile-products-toggle" aria-expanded="false">
+        Products
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="nav__mobile-accordion" id="mobile-products-accordion">
+        <div class="nav__mobile-accordion-inner">
+          <a href="products.html" class="nav__link">Vinyl Flooring</a>
+          <a href="products.html" class="nav__link">Floor Tiles</a>
+          <a href="products.html" class="nav__link">Surrounds &amp; Shower Pans</a>
+          <a href="products.html" class="nav__link">Plumbing Fixtures</a>
+          <a href="products.html" class="nav__link">Windows &amp; Doors</a>
+          <a href="products.html" class="nav__link">Furniture</a>
+          <a href="products.html" class="nav__link">View All Products</a>
+        </div>
+      </div>
+      <a href="about.html" class="nav__link">About</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+      <a href="tel:0000000000" class="nav__link nav__phone--mobile">(000) 000-0000</a>
+      <a href="contact.html" class="nav__cta">Request a Consultation</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== PAGE HERO ==================== -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero__inner">
+      <span class="page-hero__label">Materials &amp; Products</span>
+      <h1 class="page-hero__headline">Everything Your Renovation Needs,<br>Sourced and Supplied.</h1>
+      <p class="page-hero__sub">BHDR INC. supplies materials for hotel renovations &mdash; so you work with one partner for design, materials, and installation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PRODUCTS GRID ==================== -->
+<section class="section section--off-white">
+  <div class="container">
+    <p class="products-intro reveal">We supply a comprehensive range of renovation materials for hotel and motel projects of all sizes and brand affiliations. All products are sourced to meet hospitality-grade standards.</p>
+
+    <div class="products-grid">
+
+      <!-- 1. Vinyl Flooring -->
+      <div class="product-card reveal">
+        <div class="product-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3 class="product-card__title">Vinyl Flooring</h3>
+        <p class="product-card__body">Commercial-grade LVT and vinyl plank flooring for guest rooms and common areas.</p>
+      </div>
+
+      <!-- 2. Floor Tiles -->
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+          </svg>
+        </div>
+        <h3 class="product-card__title">Floor Tiles</h3>
+        <p class="product-card__body">Porcelain and ceramic tiles for bathrooms, lobbies, and high-traffic areas.</p>
+      </div>
+
+      <!-- 3. Carpet & Soft Goods -->
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 6h18M3 10h18M3 14h18M3 18h18"/>
+          </svg>
+        </div>
+        <h3 class="product-card__title">Carpet &amp; Soft Goods</h3>
+        <p class="product-card__body">Contract-grade carpet tiles and soft goods for guest rooms and corridors.</p>
+      </div>
+
+      <!-- 4. Windows -->
+      <div class="product-card reveal reveal-delay-3">
+        <div class="product-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="1"/><path d="M12 3v18M3 12h18"/>
+          </svg>
+        </div>
+        <h3 class="product-card__title">Windows</h3>
+        <p class="product-card__body">Energy-efficient hospitality windows &mdash; single and double-pane options.</p>
+      </div>
+
+      <!-- 5. Doors -->
+      <div class="product-card reveal">
+        <div class="product-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 3H6a1 1 0 0 0-1 1v17h14V4a1 1 0 0 0-1-1z"/><circle cx="15.5" cy="12" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <h3 class="product-card__title">Doors</h3>
+        <p class="product-card__body">Interior and exterior doors &mdash; hollow metal, wood, and fire-rated options.</p>
+      </div>
+
+      <!-- 6. Window Treatments -->
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 3h18"/><path d="M5 3v10l7 4 7-4V3"/>
+          </svg>
+        </div>
+        <h3 class="product-card__title">Window Treatments</h3>
+        <p class="product-card__body">Blackout curtains, drapery, and sheer panels to brand specification.</p>
+      </div>
+
+      <!-- 7. Surrounds & Shower Pans -->
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 12h16v7a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7z"/><path d="M6 12V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v5"/>
+          </svg>
+        </div>
+        <h3 class="product-card__title">Surrounds &amp; Shower Pans</h3>
+        <p class="product-card__body">Tub surrounds and shower pans for guest bathroom renovation.</p>
+      </div>
+
+      <!-- 8. Shower Glass Doors -->
+      <div class="product-card reveal reveal-delay-3">
+        <div class="product-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="8" height="18"/><rect x="13" y="3" width="8" height="18"/><path d="M11 3v18"/>
+          </svg>
+        </div>
+        <h3 class="product-card__title">Shower Glass Doors</h3>
+        <p class="product-card__body">Frameless and semi-frameless shower glass door systems.</p>
+      </div>
+
+      <!-- 9. Plumbing Fixtures -->
+      <div class="product-card reveal">
+        <div class="product-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 3v11"/><path d="M5 14c0 3 3 5 7 5s7-2 7-5"/><path d="M12 3h7v4h-7"/>
+          </svg>
+        </div>
+        <h3 class="product-card__title">Plumbing Fixtures</h3>
+        <p class="product-card__body">Hospitality-grade faucets, showerheads, toilets, and tub fixtures.</p>
+      </div>
+
+      <!-- 10. Bathroom Accessories -->
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 8h16"/><path d="M4 16h16"/><path d="M8 8v8"/><path d="M16 8v8"/>
+          </svg>
+        </div>
+        <h3 class="product-card__title">Bathroom Accessories</h3>
+        <p class="product-card__body">Towel bars, hooks, mirrors, and bathroom hardware to brand specification.</p>
+      </div>
+
+      <!-- 11. Vanity & Kitchen Cabinets -->
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="1"/><path d="M8 4v16"/><path d="M16 4v16"/><path d="M2 12h20"/>
+          </svg>
+        </div>
+        <h3 class="product-card__title">Vanity &amp; Kitchen Cabinets</h3>
+        <p class="product-card__body">Custom and semi-custom vanity cabinets for guest bathrooms and suites.</p>
+      </div>
+
+      <!-- 12. Quartz Countertops -->
+      <div class="product-card reveal reveal-delay-3">
+        <div class="product-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="6" width="20" height="5" rx="1"/><path d="M5 11v7"/><path d="M19 11v7"/>
+          </svg>
+        </div>
+        <h3 class="product-card__title">Quartz Countertops</h3>
+        <p class="product-card__body">Durable quartz countertops for bathrooms, kitchenettes, and wet bars.</p>
+      </div>
+
+      <!-- 13. Furniture -->
+      <div class="product-card reveal">
+        <div class="product-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 10h18v7H3z"/><path d="M5 10V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/><path d="M5 17v2"/><path d="M19 17v2"/>
+          </svg>
+        </div>
+        <h3 class="product-card__title">Furniture</h3>
+        <p class="product-card__body">Contract-grade guest room and lobby furniture sourced to design specification.</p>
+      </div>
+
+      <!-- 14. Mirrors & Artwork -->
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="1"/><rect x="7" y="7" width="10" height="10" rx="1"/>
+          </svg>
+        </div>
+        <h3 class="product-card__title">Mirrors &amp; Artwork</h3>
+        <p class="product-card__body">Hospitality mirrors, art packages, and decorative elements for all spaces.</p>
+      </div>
+
+      <!-- 15. Lamps & Lighting -->
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 18h6"/><path d="M12 22v-4"/><path d="M8 6l-1-3h10l-1 3"/><path d="M8 6h8l-1 8H9L8 6z"/>
+          </svg>
+        </div>
+        <h3 class="product-card__title">Lamps &amp; Lighting</h3>
+        <p class="product-card__body">Bedside lamps, desk lamps, and lighting packages for guest room renovation.</p>
+      </div>
+
+      <!-- 16. Millwork -->
+      <div class="product-card reveal reveal-delay-3">
+        <div class="product-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M2 20h20"/><path d="M5 20V8l7-6 7 6v12"/><path d="M9 20v-6h6v6"/>
+          </svg>
+        </div>
+        <h3 class="product-card__title">Millwork</h3>
+        <p class="product-card__body">Custom millwork &mdash; headboards, case goods, reception desks, and architectural details.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PRODUCT CTA ==================== -->
+<div class="product-cta-section">
+  <div class="container">
+    <h2 class="product-cta-section__headline reveal">Need Specific Materials?</h2>
+    <p class="product-cta-section__body reveal reveal-delay-1">Tell us what your renovation requires and we'll source exactly the right products at the right price.</p>
+    <a href="contact.html" class="btn btn--gold btn--lg reveal reveal-delay-2">Contact Our Team</a>
+  </div>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a href="index.html"><img src="images/logo.png" alt="BHDR INC." class="footer-logo"></a>
+        <p class="footer__tagline">Best Hotels Design and Renovation<br>Southeast United States</p>
+      </div>
+      <div>
+        <div class="footer__col-title">Services</div>
+        <ul class="footer__links">
+          <li><a href="services.html" class="footer__link">Interior Design</a></li>
+          <li><a href="services.html" class="footer__link">Guest Room Renovation</a></li>
+          <li><a href="services.html" class="footer__link">Public Areas</a></li>
+          <li><a href="services.html" class="footer__link">Exterior Renovation</a></li>
+          <li><a href="services.html" class="footer__link">FF&amp;E Procurement</a></li>
+          <li><a href="services.html" class="footer__link">Project Management</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Products</div>
+        <ul class="footer__links">
+          <li><a href="products.html" class="footer__link">Flooring</a></li>
+          <li><a href="products.html" class="footer__link">Bathroom</a></li>
+          <li><a href="products.html" class="footer__link">Windows &amp; Doors</a></li>
+          <li><a href="products.html" class="footer__link">Furniture</a></li>
+          <li><a href="products.html" class="footer__link">Fixtures</a></li>
+          <li><a href="products.html" class="footer__link">View All Products &rarr;</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Contact</div>
+        <a href="tel:0000000000" class="footer__phone">(000) 000-0000</a>
+        <p class="footer__contact-item"><a href="mailto:info@bhdrinc.com">info@bhdrinc.com</a></p>
+        <p class="footer__contact-item">Southeast United States</p>
+        <a href="https://wa.me/10000000000" class="footer__wa-link" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Message us on WhatsApp
+        </a>
+      </div>
+    </div>
+    <hr class="footer__divider">
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; 2026 BHDR INC. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
