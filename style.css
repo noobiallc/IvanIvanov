@@ -1468,3 +1468,78 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .products-grid { grid-template-columns: 1fr; }
   .projects-full-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   FLOATING CONTACT BUTTONS (Call Us / Text Us)
+   ============================================================ */
+.floating-contact {
+  position: fixed;
+  right: 22px;
+  bottom: 28px;
+  bottom: calc(28px + env(safe-area-inset-bottom, 0px));
+  z-index: 800;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+  transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
+}
+/* Auto-hidden while the contact form's submit button is in the button zone */
+.floating-contact.fc-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+}
+.fc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 132px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(15, 45, 73, .22);
+  transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+}
+.fc-btn--call { background: #0F2D49; color: #ffffff; }
+.fc-btn--call .fc-btn__icon { color: var(--gold); }
+.fc-btn--text { background: var(--gold); color: #0F2D49; }
+.fc-btn--text .fc-btn__icon { color: #0F2D49; }
+.fc-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(15, 45, 73, .30); }
+.fc-btn--text:hover { background: var(--gold-light); }
+.fc-btn:focus-visible { outline: 3px solid #ffffff; outline-offset: 2px; }
+.fc-btn--text:focus-visible { outline-color: #0F2D49; }
+.fc-btn__icon { width: 18px; height: 18px; flex-shrink: 0; }
+.fc-btn__label { white-space: nowrap; }
+
+/* Mobile: compact icon-only buttons, safe-area aware */
+@media (max-width: 767px) {
+  .floating-contact {
+    right: calc(14px + env(safe-area-inset-right, 0px));
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    gap: 10px;
+  }
+  .fc-btn {
+    min-width: 0;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .fc-btn__label { display: none; }
+  .fc-btn__icon { width: 21px; height: 21px; }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .fc-btn { transition: none; }
+  .fc-btn:hover { transform: none; }
+}

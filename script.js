@@ -134,3 +134,27 @@ if (consultForm) {
   }, { threshold: 0.1 });
   revealEls.forEach(function(el) { observer.observe(el); });
 })();
+
+/* ---- Floating contact: hide while the contact form submit is in the button zone ---- */
+(function() {
+  var fc = document.querySelector('.floating-contact');
+  var form = document.getElementById('consultation-form');
+  if (!fc || !form) return;
+  var submitBtn = form.querySelector('[type="submit"]') || form;
+  var ticking = false;
+
+  function update() {
+    ticking = false;
+    var r = submitBtn.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    // Hide the buttons when the submit button sits within the bottom 170px band
+    var inButtonZone = r.bottom > (vh - 170) && r.top < vh;
+    fc.classList.toggle('fc-hidden', inButtonZone);
+  }
+  function onScroll() {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+})();
