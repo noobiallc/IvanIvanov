@@ -1121,9 +1121,10 @@ button { font-family: inherit; }
   align-items: start;
 }
 .contact-info__phone {
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  font-size: clamp(26px, 4vw, 36px);
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 3.5vw, 32px);
+  letter-spacing: -0.01em;
   color: var(--navy);
   display: block;
   margin-bottom: 6px;
@@ -1272,7 +1273,7 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 }
 .footer__grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  grid-template-columns: 1.5fr 1fr 1.2fr;
   gap: 48px;
   padding-bottom: 56px;
 }
@@ -1302,8 +1303,10 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 .footer__link:hover { color: rgba(255,255,255,.9); }
 .footer__phone {
   display: block;
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.01em;
   color: var(--gold);
   margin-bottom: 12px;
   transition: color .2s ease;
@@ -1353,6 +1356,10 @@ textarea.form-control { resize: vertical; min-height: 100px; }
    RESPONSIVE — TABLET (768–1023px)
    ============================================================ */
 @media (max-width: 1023px) {
+  /* Use the hamburger menu across the full tablet range so the desktop nav/CTA never overflow */
+  .nav__links, .nav__cta, .nav__phone { display: none; }
+  .nav__hamburger { display: flex; }
+
   .service-cards-grid { grid-template-columns: 1fr; gap: 2px; }
   .service-card { height: 280px; }
 
@@ -1413,9 +1420,9 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .hero__inner { padding: 60px 24px; }
   .hero__ctas { flex-direction: column; align-items: stretch; }
   .hero__ctas .btn { justify-content: center; }
-  /* Keep hero trust tags on one row (like desktop), fitted to phone width */
+  /* Keep hero trust tags on one row (like desktop) */
   .hero__trust { flex-wrap: nowrap; }
-  .hero__trust-item { padding: 0 10px; font-size: 11px; white-space: nowrap; }
+  .hero__trust-item { white-space: nowrap; }
 
   .service-cards-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }

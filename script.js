@@ -20,18 +20,6 @@ if (hamburger && mobileNav) {
   });
 }
 
-/* ---- Mobile Products accordion ---- */
-const mobileProductsToggle = document.getElementById('mobile-products-toggle');
-const mobileProductsAccordion = document.getElementById('mobile-products-accordion');
-
-if (mobileProductsToggle && mobileProductsAccordion) {
-  mobileProductsToggle.addEventListener('click', function(e) {
-    e.stopPropagation();
-    const isOpen = mobileProductsAccordion.classList.toggle('open');
-    mobileProductsToggle.classList.toggle('open', isOpen);
-  });
-}
-
 /* ---- Active nav link ---- */
 (function() {
   const current = window.location.pathname.split('/').pop() || 'index.html';
@@ -42,32 +30,6 @@ if (mobileProductsToggle && mobileProductsAccordion) {
     }
   });
 })();
-
-/* ---- Products mega menu dropdown ---- */
-const dropdowns = document.querySelectorAll('.nav-dropdown');
-dropdowns.forEach(function(dropdown) {
-  const toggle = dropdown.querySelector('.nav-dropdown-toggle');
-  if (!toggle) return;
-  toggle.addEventListener('click', function(e) {
-    e.stopPropagation();
-    const isOpen = dropdown.classList.contains('open');
-    dropdowns.forEach(function(d) { d.classList.remove('open'); });
-    if (!isOpen) {
-      dropdown.classList.add('open');
-      toggle.setAttribute('aria-expanded', 'true');
-    } else {
-      toggle.setAttribute('aria-expanded', 'false');
-    }
-  });
-});
-
-document.addEventListener('click', function() {
-  dropdowns.forEach(function(d) {
-    d.classList.remove('open');
-    const t = d.querySelector('.nav-dropdown-toggle');
-    if (t) t.setAttribute('aria-expanded', 'false');
-  });
-});
 
 /* ---- Project filter (projects.html) ---- */
 const filterBtns = document.querySelectorAll('.filter-btn');
@@ -117,7 +79,7 @@ if (consultForm) {
     } catch (_) {
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;
-      alert('Something went wrong. Please email us at info@bhdrinc.com or call (000) 000-0000.');
+      alert('Something went wrong. Please email us at bhdrinc@yahoo.com or call 678-656-8354.');
     }
   });
 }
