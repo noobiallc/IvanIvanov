@@ -574,6 +574,33 @@ button { font-family: inherit; }
 .section__sub--dark   { color: var(--text-mid); }
 .section__sub--center { margin-left: auto; margin-right: auto; }
 
+/* Homepage intro / company description (below hero) */
+.intro-section {
+  background: var(--off-white);
+  padding: 84px 0;
+}
+.intro-section__inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.intro-section__accent {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--gold-dark);
+  display: block;
+  margin-bottom: 18px;
+}
+.intro-section__lead {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: clamp(20px, 2.4vw, 27px);
+  line-height: 1.5;
+  color: var(--text-dark);
+  margin: 0;
+}
+
 /* ============================================================
    HOMEPAGE — SERVICE IMAGE CARDS
    ============================================================ */
@@ -1368,6 +1395,9 @@ textarea.form-control { resize: vertical; min-height: 100px; }
    RESPONSIVE — MOBILE (<768px)
    ============================================================ */
 @media (max-width: 767px) {
+  .intro-section { padding: 52px 0; }
+  .intro-section__accent { font-size: 20px; margin-bottom: 14px; }
+  .intro-section__lead { font-size: 19px; line-height: 1.55; }
   .stats-section { padding: 56px 0; }
   .stats-row { flex-direction: column; gap: 0; }
   .stat-block { padding: 28px 24px; width: 100%; }
