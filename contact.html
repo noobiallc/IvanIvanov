@@ -107,87 +107,28 @@
             <input type="hidden" name="source" value="bhdr-website">
             <input type="hidden" name="page_url" value="">
 
-            <!-- Row 1: Name -->
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="first-name">First Name</label>
-                <input class="form-control" type="text" id="first-name" name="first_name" required placeholder="First name">
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="last-name">Last Name</label>
-                <input class="form-control" type="text" id="last-name" name="last_name" required placeholder="Last name">
-              </div>
-            </div>
-
-            <!-- Row 2: Company -->
+            <!-- Field 1: Name -->
             <div class="form-group">
-              <label class="form-label" for="company">Company / Property Name <span style="color:var(--gold-dark)">*</span></label>
-              <input class="form-control" type="text" id="company" name="company" required placeholder="Hotel or management company">
+              <label class="form-label" for="name">Name</label>
+              <input class="form-control" type="text" id="name" name="name" required autocomplete="name" placeholder="Your full name">
             </div>
 
-            <!-- Row 3: Phone + Email -->
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="phone">Phone</label>
-                <input class="form-control" type="tel" id="phone" name="phone" required placeholder="(___) ___-____">
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="email">Email</label>
-                <input class="form-control" type="email" id="email" name="email" required placeholder="your@email.com">
-              </div>
-            </div>
-
-            <!-- Row 4: Location -->
+            <!-- Field 2: Phone -->
             <div class="form-group">
-              <label class="form-label" for="location">Property Location</label>
-              <input class="form-control" type="text" id="location" name="property_location" placeholder="City, State">
+              <label class="form-label" for="phone">Phone</label>
+              <input class="form-control" type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="(___) ___-____">
             </div>
 
-            <!-- Row 5: Project Type -->
+            <!-- Field 3: Email -->
             <div class="form-group">
-              <label class="form-label" for="project-type">Project Type</label>
-              <select class="form-control" id="project-type" name="project_type" required>
-                <option value="" disabled selected>Select project type...</option>
-                <option value="Full Property Renovation">Full Property Renovation</option>
-                <option value="Guest Room Renovation">Guest Room Renovation</option>
-                <option value="Lobby & Public Areas">Lobby &amp; Public Areas</option>
-                <option value="Exterior Renovation">Exterior Renovation</option>
-                <option value="FF&E & Materials Procurement">FF&amp;E &amp; Materials Procurement</option>
-                <option value="Property Improvement Plan (PIP)">Property Improvement Plan (PIP)</option>
-                <option value="Materials Supply Only">Materials Supply Only</option>
-                <option value="Other">Other</option>
-              </select>
+              <label class="form-label" for="email">Email</label>
+              <input class="form-control" type="email" id="email" name="email" required autocomplete="email" placeholder="your@email.com">
             </div>
 
-            <!-- Row 6: Room Count -->
+            <!-- Field 4: Message -->
             <div class="form-group">
-              <label class="form-label" for="rooms">Number of Rooms</label>
-              <select class="form-control" id="rooms" name="room_count">
-                <option value="" disabled selected>Select room count...</option>
-                <option value="Under 50">Under 50</option>
-                <option value="50-100">50&ndash;100</option>
-                <option value="100-200">100&ndash;200</option>
-                <option value="200-300">200&ndash;300</option>
-                <option value="300+">300+ rooms</option>
-              </select>
-            </div>
-
-            <!-- Row 7: Timeline -->
-            <div class="form-group">
-              <label class="form-label" for="timeline">Project Timeline</label>
-              <select class="form-control" id="timeline" name="project_timeline">
-                <option value="" disabled selected>Select timeline...</option>
-                <option value="Within 3 months">Within 3 months</option>
-                <option value="3-6 months">3&ndash;6 months</option>
-                <option value="6-12 months">6&ndash;12 months</option>
-                <option value="Planning stage">Planning stage</option>
-              </select>
-            </div>
-
-            <!-- Row 8: Details -->
-            <div class="form-group">
-              <label class="form-label" for="details">Project Details</label>
-              <textarea class="form-control" id="details" name="project_details" rows="4" placeholder="Describe your renovation goals, brand affiliation, property condition, or materials needs..."></textarea>
+              <label class="form-label" for="message">Message <span class="form-label__optional">(optional)</span></label>
+              <textarea class="form-control" id="message" name="message" rows="5" placeholder="Briefly describe your project..."></textarea>
             </div>
 
             <button type="submit" class="form-submit">Submit Consultation Request</button>

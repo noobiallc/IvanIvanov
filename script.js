@@ -31,25 +31,6 @@ if (hamburger && mobileNav) {
   });
 })();
 
-/* ---- Project filter (projects.html) ---- */
-const filterBtns = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card[data-category]');
-
-filterBtns.forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    filterBtns.forEach(function(b) { b.classList.remove('active'); });
-    btn.classList.add('active');
-    const cat = btn.getAttribute('data-filter');
-    projectCards.forEach(function(card) {
-      if (cat === 'all' || card.getAttribute('data-category') === cat) {
-        card.classList.remove('project-card--hidden');
-      } else {
-        card.classList.add('project-card--hidden');
-      }
-    });
-  });
-});
-
 /* ---- Consultation form (contact.html) ---- */
 const consultForm = document.getElementById('consultation-form');
 if (consultForm) {

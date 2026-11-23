@@ -874,16 +874,19 @@ button { font-family: inherit; }
 .service-category__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
-  min-height: 520px;
+  align-items: stretch;
+  min-height: 420px;
 }
 .service-category__text { padding: 72px 64px; }
-.service-category__img-wrap { overflow: hidden; height: 100%; min-height: 520px; }
+/* Image column fills the row height set by the text column; the image is
+   absolutely positioned so it never forces the row taller than the text. */
+.service-category__img-wrap { position: relative; overflow: hidden; }
 .service-category__img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  min-height: 520px;
 }
 .service-category__label {
   font-family: 'Inter', sans-serif;
@@ -934,14 +937,14 @@ button { font-family: inherit; }
 }
 
 /* FF&E Section */
-.ffe-section { background: var(--navy); padding: 80px 0; }
+.ffe-section { background: var(--white); padding: 80px 0; }
 .ffe-label {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 11px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-dark);
   display: block;
   text-align: center;
   margin-bottom: 12px;
@@ -950,7 +953,7 @@ button { font-family: inherit; }
   font-family: 'Playfair Display', serif;
   font-weight: 700;
   font-size: clamp(26px, 3.5vw, 38px);
-  color: var(--white);
+  color: var(--navy);
   text-align: center;
   margin-bottom: 52px;
   line-height: 1.15;
@@ -962,21 +965,21 @@ button { font-family: inherit; }
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-dark);
   margin-bottom: 14px;
   padding-bottom: 10px;
-  border-bottom: 1px solid var(--border-dark);
+  border-bottom: 1px solid var(--border);
 }
 .ffe-col__body {
   font-size: 15px;
-  color: rgba(255,255,255,.72);
+  color: var(--text-mid);
   line-height: 1.75;
   margin-bottom: 20px;
 }
 .ffe-list { display: flex; flex-direction: column; gap: 8px; }
 .ffe-list li {
   font-size: 14px;
-  color: rgba(255,255,255,.72);
+  color: var(--text-dark);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1093,21 +1096,22 @@ button { font-family: inherit; }
 
 .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .value-card {
-  background: var(--navy-mid);
-  border: 1px solid var(--border-dark);
+  background: var(--white);
+  border: 1px solid var(--border);
   border-top: 3px solid var(--gold);
   padding: 32px 28px;
+  box-shadow: 0 2px 12px rgba(15, 45, 73, 0.05);
 }
 .value-card__title {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
   font-size: 19px;
-  color: var(--gold);
+  color: var(--gold-dark);
   margin-bottom: 14px;
 }
 .value-card__body {
   font-size: 14px;
-  color: rgba(255,255,255,.72);
+  color: var(--text-mid);
   line-height: 1.7;
 }
 
@@ -1199,6 +1203,12 @@ button { font-family: inherit; }
   font-size: 12px;
   color: var(--text-mid);
   margin-bottom: 6px;
+}
+.form-label__optional {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  opacity: 0.6;
 }
 .form-control {
   width: 100%;
@@ -1375,8 +1385,8 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 
   .service-category__inner { grid-template-columns: 1fr; }
   .service-category__text { padding: 56px 40px; }
+  /* Stacked image needs its own height since it is absolutely positioned. */
   .service-category__img-wrap { min-height: 360px; }
-  .service-category__img { min-height: 360px; }
 
   .ffe-grid { grid-template-columns: 1fr; gap: 36px; }
 
@@ -1542,4 +1552,189 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 @media (prefers-reduced-motion: reduce) {
   .fc-btn { transition: none; }
   .fc-btn:hover { transform: none; }
+}
+
+/* ============================================================
+   HOTEL PORTFOLIO — PROJECT CARDS (linked)
+   ============================================================ */
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.project-card--link {
+  cursor: pointer;
+  opacity: 0;
+  animation: cardIn .6s cubic-bezier(.4,0,.2,1) forwards;
+}
+.project-card--link:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.project-card__frame { position: relative; }
+.project-card__view {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translate(-50%, 10px);
+  background: var(--navy);
+  color: var(--gold);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease, transform .3s ease;
+}
+.project-card--link:hover .project-card__view,
+.project-card--link:focus-visible .project-card__view {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ============================================================
+   HOTEL PORTFOLIO — GALLERY PAGE
+   ============================================================ */
+.gallery-back {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+  transition: color .2s ease;
+}
+.gallery-back:hover { color: var(--gold-light); }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.gallery-tile {
+  display: block;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: 2px solid transparent;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color .3s ease;
+}
+.gallery-tile:hover { border-color: var(--gold); }
+.gallery-tile:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.gallery-tile__img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  transition: transform .45s ease;
+}
+.gallery-tile:hover .gallery-tile__img { transform: scale(1.05); }
+
+.gallery-empty {
+  grid-column: 1 / -1;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: var(--text-mid);
+}
+.gallery-empty a { color: var(--gold-dark); text-decoration: underline; }
+.gallery-empty a:hover { color: var(--gold); }
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+body.lb-lock { overflow: hidden; }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(10, 22, 38, .94);
+}
+.lightbox.is-open { display: flex; }
+.lightbox__stage {
+  max-width: min(1100px, 92vw);
+  max-height: 86vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox__img {
+  max-width: 100%;
+  max-height: 86vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
+}
+.lightbox__close,
+.lightbox__nav {
+  position: absolute;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .08);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: background .2s ease, color .2s ease;
+}
+.lightbox__close {
+  top: 18px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  font-size: 30px;
+}
+.lightbox__nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  font-size: 34px;
+}
+.lightbox__nav--prev { left: 18px; }
+.lightbox__nav--next { right: 18px; }
+.lightbox__close:hover,
+.lightbox__nav:hover { background: var(--gold); color: var(--navy); }
+.lightbox__close:focus-visible,
+.lightbox__nav:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.lightbox__counter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, .7);
+}
+
+/* Gallery + lightbox responsive */
+@media (max-width: 1023px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 767px) {
+  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .lightbox { padding: 12px; }
+  .lightbox__nav { width: 44px; height: 44px; font-size: 28px; }
+  .lightbox__nav--prev { left: 8px; }
+  .lightbox__nav--next { right: 8px; }
+  .lightbox__close { top: 10px; right: 10px; width: 44px; height: 44px; font-size: 26px; }
+}
+@media (max-width: 479px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card--link { opacity: 1; animation: none; }
+  .gallery-tile:hover .gallery-tile__img { transform: none; }
+  .project-card__view { transition: opacity .2s ease; }
 }
