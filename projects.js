@@ -18,7 +18,16 @@
   var frag = document.createDocumentFragment();
 
   hotels.forEach(function (hotel, i) {
-    var featured = (hotel.photos && hotel.photos[0]) || null;
+    // Featured card image: the photo named by hotel.featured (so its alt text
+    // carries over), falling back to the first gallery photo. The photos[]
+    // array and gallery order are never changed by this.
+    var featured = null;
+    if (hotel.photos && hotel.photos.length) {
+      if (hotel.featured) {
+        featured = hotel.photos.filter(function (p) { return p.file === hotel.featured; })[0] || null;
+      }
+      if (!featured) featured = hotel.photos[0];
+    }
     if (!featured) return;
 
     var locationText = [hotel.city, hotel.state].filter(Boolean).join(", ");

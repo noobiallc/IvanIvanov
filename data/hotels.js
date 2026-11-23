@@ -20,6 +20,7 @@ window.BHDR_HOTELS = [
     city: "Hoover",
     state: "AL",
     dir: "images/projects/hotels/homewood-suites-hoover",
+    featured: "12-lobby-lounge-market.webp",
     photos: [
       { file: "16-lobby-lounge-fireplace.webp",   alt: "Renovated lobby lounge at Homewood Suites Hoover with a stone fireplace, curved sofa and lodge-style seating" },
       { file: "01-guest-bathroom-vanity.webp",    alt: "Renovated suite bathroom at Homewood Suites Hoover with a lit mirror, marble vanity and walk-in closet" },
@@ -45,6 +46,7 @@ window.BHDR_HOTELS = [
     city: "Hoover",
     state: "AL",
     dir: "images/projects/hotels/holiday-inn-hoover",
+    featured: "13-lobby-great-room.webp",
     photos: [
       { file: "13-lobby-great-room.webp",         alt: "Renovated lobby great room at Holiday Inn Hoover with a two-story ceiling, framed Hoover artwork and lounge seating" },
       { file: "01-guest-room-media-wall.webp",    alt: "Renovated guest room media wall and desk at Holiday Inn Hoover with a flat-screen TV and gallery artwork" },
@@ -70,6 +72,7 @@ window.BHDR_HOTELS = [
     city: "Madison",
     state: "MS",
     dir: "images/projects/hotels/hilton-garden-inn-madison",
+    featured: "14-lobby-dining-bar.webp",
     photos: [
       { file: "25-exterior.webp",                 alt: "Exterior of the renovated Hilton Garden Inn Madison at dusk with the illuminated brand sign and landscaping" },
       { file: "01-guest-room-media-desk.webp",    alt: "Renovated guest room media wall and desk at Hilton Garden Inn Madison with a flat-screen TV and floral artwork" },
@@ -104,6 +107,7 @@ window.BHDR_HOTELS = [
     city: "Meridian",
     state: "MS",
     dir: "images/projects/hotels/holiday-inn-meridian",
+    featured: "09-lobby-good-vibes.webp",
     photos: [
       { file: "05-lobby-lounge-fireplace.webp",   alt: "Renovated lobby lounge at Holiday Inn Meridian with green velvet chairs, leather sofas and a fireplace" },
       { file: "01-two-queen-guest-room.webp",     alt: "Renovated two-queen guest room at Holiday Inn Meridian with upholstered headboards and chevron carpet" },
@@ -126,6 +130,7 @@ window.BHDR_HOTELS = [
     city: "Meridian",
     state: "MS",
     dir: "images/projects/hotels/hampton-inn-meridian",
+    featured: "07-breakfast-dining-2.webp",
     photos: [
       { file: "04-reception-welcome.webp",        alt: "Renovated reception desk at Hampton Inn Meridian with a Welcome to the Magnolia feature wall" },
       { file: "01-guest-room-media-desk.webp",    alt: "Renovated guest room media wall and desk at Hampton Inn Meridian with a flat-screen TV and railroad artwork" },
@@ -149,6 +154,7 @@ window.BHDR_HOTELS = [
     city: "Meridian",
     state: "MS",
     dir: "images/projects/hotels/hilton-garden-inn-meridian",
+    featured: "14-lobby-bar.webp",
     photos: [
       { file: "08-lobby-great-room-fireplace.webp", alt: "Renovated lobby great room at Hilton Garden Inn Meridian with a tile fireplace, colorful sofas and large windows" },
       { file: "01-two-queen-guest-room.webp",     alt: "Renovated two-queen guest room at Hilton Garden Inn Meridian with an olive accent wall and wood headboards" },
@@ -179,6 +185,7 @@ window.BHDR_HOTELS = [
     city: "McDonough",
     state: "GA",
     dir: "images/projects/hotels/tru-by-hilton-mcdonough",
+    featured: "12-lobby-market-pantry.webp",
     photos: [
       { file: "10-lounge-mcdonough-mural.webp",     alt: "Tru by Hilton McDonough social lounge with a McDonough, Georgia mural, pool table and colorful lounge seating" },
       { file: "01-bathroom-feature-wall.webp",      alt: "Renovated guest bathroom at Tru by Hilton McDonough with a blue geometric feature wall and quartz-top vanity" },
@@ -205,6 +212,7 @@ window.BHDR_HOTELS = [
     city: "Vicksburg",
     state: "MS",
     dir: "images/projects/hotels/candlewood-suites-vicksburg",
+    featured: "04-guest-room-king-2.webp",
     photos: [
       { file: "03-guest-room-king.webp",      alt: "Renovated king guest room at Candlewood Suites Vicksburg with sofa and framed artwork" },
       { file: "01-lobby-lounge.webp",        alt: "Renovated lobby lounge at Candlewood Suites Vicksburg with fireplace, lounge seating and a communal table" },
@@ -223,6 +231,7 @@ window.BHDR_HOTELS = [
     city: "Vicksburg",
     state: "MS",
     dir: "images/projects/hotels/hampton-inn-suites-vicksburg",
+    featured: "03-bathroom-vanity.webp",
     photos: [
       { file: "02-guest-room-desk-media.webp",    alt: "Renovated guest room work desk and media console at Hampton Inn & Suites Vicksburg with accent chair and flat-screen TV" },
       { file: "01-guest-room-wet-bar.webp",       alt: "Renovated in-room wet bar and beverage station at Hampton Inn & Suites Vicksburg with quartz counter, bar sink and microwave" },
