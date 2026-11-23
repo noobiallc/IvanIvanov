@@ -341,7 +341,13 @@ button { font-family: inherit; }
    HERO — HOMEPAGE
    ============================================================ */
 .hero {
-  min-height: 60vh;
+  /* Fill the viewport below the header (announcement bar + sticky nav).
+     --header-h is measured in script.js so wrapping/ breakpoint changes are
+     accounted for; the 118px fallback ≈ announce bar + 84px nav. The dvh unit
+     tracks mobile browser chrome so the next section never peeks in; min-height
+     (not height) lets the hero grow if the content needs more room. */
+  min-height: calc(100vh - var(--header-h, 118px));
+  min-height: calc(100dvh - var(--header-h, 118px));
   display: flex;
   align-items: center;
   background: var(--navy);
@@ -573,33 +579,6 @@ button { font-family: inherit; }
 .section__sub--light  { color: rgba(255,255,255,.72); }
 .section__sub--dark   { color: var(--text-mid); }
 .section__sub--center { margin-left: auto; margin-right: auto; }
-
-/* Homepage intro / company description (below hero) */
-.intro-section {
-  background: var(--off-white);
-  padding: 84px 0;
-}
-.intro-section__inner {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-.intro-section__accent {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 22px;
-  color: var(--gold-dark);
-  display: block;
-  margin-bottom: 18px;
-}
-.intro-section__lead {
-  font-family: 'Playfair Display', serif;
-  font-weight: 400;
-  font-size: clamp(20px, 2.4vw, 27px);
-  line-height: 1.5;
-  color: var(--text-dark);
-  margin: 0;
-}
 
 /* ============================================================
    HOMEPAGE — SERVICE IMAGE CARDS
@@ -1387,6 +1366,10 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .service-category__text { padding: 56px 40px; }
   /* Stacked image needs its own height since it is absolutely positioned. */
   .service-category__img-wrap { min-height: 360px; }
+  /* Stacked layout: every section must read text first, then picture.
+     The navy (Guest Rooms) section lists its image before the text in the DOM
+     for the desktop image-left layout, so place its text first when stacked. */
+  .service-category--navy .service-category__text { order: -1; }
 
   .ffe-grid { grid-template-columns: 1fr; gap: 36px; }
 
@@ -1412,9 +1395,6 @@ textarea.form-control { resize: vertical; min-height: 100px; }
    RESPONSIVE — MOBILE (<768px)
    ============================================================ */
 @media (max-width: 767px) {
-  .intro-section { padding: 52px 0; }
-  .intro-section__accent { font-size: 20px; margin-bottom: 14px; }
-  .intro-section__lead { font-size: 19px; line-height: 1.55; }
   .stats-section { padding: 56px 0; }
   .stats-row { flex-direction: column; gap: 0; }
   .stat-block { padding: 28px 24px; width: 100%; }

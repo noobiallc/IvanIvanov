@@ -139,3 +139,19 @@ if (consultForm) {
   window.addEventListener('resize', onScroll);
   update();
 })();
+
+/* ---- Full-screen hero: expose the header height (announcement bar + sticky nav)
+   as --header-h so the hero can fill exactly the viewport below it. ---- */
+(function() {
+  var root = document.documentElement;
+  var bar = document.querySelector('.announce-bar');
+  var nav = document.querySelector('.nav');
+  if (!bar && !nav) return;
+  function setHeaderH() {
+    var h = (bar ? bar.offsetHeight : 0) + (nav ? nav.offsetHeight : 0);
+    root.style.setProperty('--header-h', h + 'px');
+  }
+  setHeaderH();
+  window.addEventListener('load', setHeaderH);
+  window.addEventListener('resize', setHeaderH);
+})();
